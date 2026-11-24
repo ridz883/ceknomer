@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEKNOMOR — Lacak Reputasi Nomor & Deteksi Spam Publik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- HERO + NAVBAR -->
+  <header class="hero-wrapper">
+    <div class="hero-bg-polygons" aria-hidden="true">
+      <svg viewBox="0 0 1440 620" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1578DD" />
+            <stop offset="55%" stop-color="#2998F2" />
+            <stop offset="100%" stop-color="#58BBFA" />
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="620" fill="url(#skyGrad)" />
+        <polygon points="0,380 280,260 540,420 0,520" fill="#ffffff" fill-opacity="0.06" />
+        <polygon points="920,80 1440,20 1440,340 1080,280" fill="#ffffff" fill-opacity="0.07" />
+        <polygon points="680,440 1050,310 1440,430 1440,620 680,620" fill="#E3F2FD" fill-opacity="0.35" />
+        <polygon points="0,470 360,360 760,490 1160,380 1440,470 1440,620 0,620" fill="#F4F9FE" fill-opacity="0.7" />
+        <polygon points="0,530 420,450 880,540 1240,460 1440,520 1440,620 0,620" fill="#F4F9FE" />
+      </svg>
+    </div>
+
+    <div class="container">
+      <!-- Top Navigation -->
+      <nav class="navbar">
+        <a href="#top" class="brand">
+          <div class="brand-icon">
+            <svg viewBox="0 0 36 36" fill="none">
+              <polygon points="18,2 33,10 28,28 18,34 8,28 3,10" fill="#ffffff" fill-opacity="0.22" stroke="#ffffff" stroke-width="1.6" />
+              <polygon points="18,6 28,12 18,29 8,12" fill="#ffffff" />
+            </svg>
+          </div>
+          <div>
+            <span class="brand-title">CEKNOMOR</span>
+            <span class="brand-sub">PUBLIC SPAM RADAR</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="#top" class="nav-link active">Beranda</a>
+          <a href="#hasil-analisis" class="nav-link">Hasil Cek</a>
+          <a href="#spam-populer" class="nav-link">Spam Populer</a>
+          <a href="#ringkasan-fitur" class="nav-link">Fitur Sistem</a>
+          <a href="#direktori-sitemap" class="nav-link">Sitemap</a>
+          <a href="#cara-kerja" class="nav-link">Panduan</a>
+        </div>
+
+        <div class="nav-actions">
+          <label class="locale-pill" title="Pilih Bahasa Data Getcontact">
+            <span>Locale</span>
+            <select id="globalLocale">
+              <option value="id" selected>ID</option>
+              <option value="en">EN</option>
+              <option value="tr">TR</option>
+              <option value="ru">RU</option>
+            </select>
+          </label>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">CEK NOMOR</h1>
+          <p class="hero-subtitle">LACAK IDENTITAS &amp; REPUTASI SPAM</p>
+          <p class="hero-script">Cek. Deteksi. Lindungi.</p>
+          <p class="hero-desc">
+            Periksa skor risiko spam, laporan komunitas, operator, wilayah, komentar publik, dan indeks sitemap nomor telepon secara real-time.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#search-widget" class="btn-hero-white">
+              Mulai Cek Nomor
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </a>
+            <span class="live-badge" id="heroLiveBadge">
+              <span class="pulse-dot"></span>
+              <span id="heroLiveText">Memuat statistik live...</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Low-Poly Geometric Radar / Paper Signal Illustration -->
+        <div class="hero-illustration" aria-hidden="true">
+          <svg viewBox="0 0 500 340" fill="none">
+            <!-- Dashed Signal Orbit -->
+            <path d="M55,250 C110,130 230,270 315,130" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="7 7" stroke-opacity="0.8" />
+            <!-- Low-Poly Origami Signal Plane / Shield -->
+            <g transform="translate(295, 36)">
+              <polygon points="150,12 12,72 64,96" fill="#FFFFFF" />
+              <polygon points="150,12 64,96 86,138" fill="#CBE7FE" />
+              <polygon points="150,12 86,138 124,114" fill="#EFF7FF" />
+              <polygon points="64,96 86,138 56,126" fill="#90CAF9" />
+            </g>
+            <!-- Low-Poly Geometric Towers / Radar Pillars -->
+            <polygon points="150,310 185,180 220,310" fill="#E3F2FD" fill-opacity="0.85" />
+            <polygon points="185,180 220,310 202,310" fill="#BBDEFB" fill-opacity="0.9" />
+            <polygon points="240,310 280,145 320,310" fill="#FFFFFF" fill-opacity="0.92" />
+            <polygon points="280,145 320,310 296,310" fill="#D4EBFE" fill-opacity="0.95" />
+            <polygon points="335,310 375,205 415,310" fill="#E1F1FD" fill-opacity="0.88" />
+            <!-- Low-Poly Clouds -->
+            <polygon points="40,310 95,255 165,270 210,310" fill="#FFFFFF" />
+            <polygon points="260,310 330,265 415,260 475,310" fill="#FFFFFF" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FLOATING TABBED SEARCH BAR (Overlapping Hero Bottom) -->
+  <section id="search-widget" class="search-section">
+    <div class="container">
+      <div class="search-card">
+        <!-- Tabs -->
+        <div class="search-tabs" role="tablist">
+          <button type="button" class="search-tab active" data-tab="lookup">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            Cek Nomor
+          </button>
+          <button type="button" class="search-tab" data-tab="sitemap-find">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            Cari di Sitemap
+          </button>
+          <button type="button" class="search-tab" data-tab="sitemap-batch">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+            </svg>
+            Batch Detail Sitemap
+          </button>
+        </div>
+
+        <!-- Tab 1: Number Lookup Form -->
+        <form id="lookupForm" class="search-panel active" data-panel="lookup">
+          <div class="search-fields-grid">
+            <div class="field-box">
+              <label for="countryCodeInput">Kode Negara</label>
+              <select id="countryCodeInput">
+                <option value="62" selected>+62 (Indonesia)</option>
+                <option value="1">+1 (USA / Kanada)</option>
+                <option value="90">+90 (Turki)</option>
+                <option value="7">+7 (Rusia)</option>
+                <option value="60">+60 (Malaysia)</option>
+                <option value="65">+65 (Singapura)</option>
+                <option value="">Internasional (Tanpa Prefix)</option>
+              </select>
+            </div>
+
+            <div class="field-box field-wide">
+              <label for="phoneInput">Nomor Telepon atau URL Getcontact</label>
+              <input
+                type="text"
+                id="phoneInput"
+                placeholder="Contoh: 081234567890 atau +62812... atau URL /p/..."
+                required
+              />
+            </div>
+
+            <div class="field-box">
+              <label for="lookupLocaleInput">Bahasa Halaman</label>
+              <select id="lookupLocaleInput">
+                <option value="id" selected>ID — Indonesia</option>
+                <option value="en">EN — English</option>
+                <option value="tr">TR — Türkçe</option>
+                <option value="ru">RU — Русский</option>
+              </select>
+            </div>
+
+            <div class="field-box">
+              <label for="lookupModeInput">Mode Ekstraksi</label>
+              <select id="lookupModeInput">
+                <option value="full" selected>Lengkap (Stats + Komentar)</option>
+                <option value="comments">Khusus Komentar</option>
+                <option value="url">Generate Search URL</option>
+              </select>
+            </div>
+
+            <div class="field-action">
+              <button type="submit" class="btn-primary-search" id="btnLookupSubmit">
+                Cek Nomor
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Tab 2: Sitemap Find Form -->
+        <form id="sitemapFindForm" class="search-panel" data-panel="sitemap-find">
+          <div class="search-fields-grid">
+            <div class="field-box field-wide">
+              <label for="sitemapQueryInput">Potongan Digit / Slug Nomor</label>
+              <input
+                type="text"
+                id="sitemapQueryInput"
+                placeholder="Contoh: 62812 atau 90532"
+                required
+              />
+            </div>
+
+            <div class="field-box">
+              <label for="sitemapFindLocale">Filter Locale</label>
+              <select id="sitemapFindLocale">
+                <option value="all" selected>Semua Locale</option>
+                <option value="id">ID</option>
+                <option value="en">EN</option>
+                <option value="tr">TR</option>
+                <option value="ru">RU</option>
+              </select>
+            </div>
+
+            <div class="field-box">
+              <label for="sitemapExactSelect">Tipe Pencocokan</label>
+              <select id="sitemapExactSelect">
+                <option value="0" selected>Partial (Mengandung Digit)</option>
+                <option value="1">Exact Match (Persis)</option>
+              </select>
+            </div>
+
+            <div class="field-box">
+              <label for="sitemapDetailsSelect">Ambil Detail</label>
+              <select id="sitemapDetailsSelect">
+                <option value="0" selected>Daftar Slug Saja (Cepat)</option>
+                <option value="1">Dengan Detail (Maks 5)</option>
+              </select>
+            </div>
+
+            <div class="field-action">
+              <button type="submit" class="btn-primary-search">
+                Cari Sitemap
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Tab 3: Sitemap Batch Detail Form -->
+        <form id="sitemapBatchForm" class="search-panel" data-panel="sitemap-batch">
+          <div class="search-fields-grid">
+            <div class="field-box">
+              <label for="batchLocaleInput">Locale Sitemap</label>
+              <select id="batchLocaleInput">
+                <option value="id" selected>ID — Indonesia</option>
+                <option value="en">EN — English</option>
+                <option value="tr">TR — Türkçe</option>
+                <option value="ru">RU — Русский</option>
+              </select>
+            </div>
+
+            <div class="field-box">
+              <label for="batchOffsetInput">Offset (Mulai Urutan)</label>
+              <input type="number" id="batchOffsetInput" min="0" value="0" />
+            </div>
+
+            <div class="field-box">
+              <label for="batchLimitInput">Limit Halaman (1–6)</label>
+              <input type="number" id="batchLimitInput" min="1" max="6" value="3" />
+            </div>
+
+            <div class="field-box field-wide">
+              <label>Info Ekstraksi Batch</label>
+              <div class="static-field-note">Mengambil detail N halaman nomor langsung dari Sitemap XML.</div>
+            </div>
+
+            <div class="field-action">
+              <button type="submit" class="btn-primary-search">
+                Ambil Batch
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE RESULT SECTION (Tampil otomatis saat pencarian dilakukan) -->
+  <section id="hasil-analisis" class="result-section hidden">
+    <div class="container">
+      <div id="resultContainer"></div>
+    </div>
+  </section>
+
+  <!-- 4 TRUST / CAPABILITY BADGES (Sesuai 4 kartu di bawah search bar gambar) -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Deteksi Risiko Spam</h3>
+            <p>Analisis label bahaya &amp; skor persentase publik</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <div>
+            <h3>Statistik &amp; Operator</h3>
+            <p>Jumlah pencarian, total panggilan &amp; wilayah</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Komentar &amp; JSON-LD</h3>
+            <p>Ulasan komunitas, QAPage, FAQ &amp; Breadcrumb</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg>
+          </div>
+          <div>
+            <h3>Sistem Sitemap XML</h3>
+            <p>Filter slug, exact match &amp; paginasi offset/limit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR SPAM NUMBERS (4-Column Grid seperti "POPULAR PACKAGES") -->
+  <section id="spam-populer" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">NOMOR SPAM POPULER</h2>
+          <p class="section-desc">Daftar nomor spam publik yang sedang ramai dilaporkan pada halaman utama Getcontact.</p>
+        </div>
+        <button type="button" class="link-action" id="btnRefreshSpam">
+          Muat Ulang Data
+          <span class="circle-icon">↻</span>
+        </button>
+      </div>
+
+      <div id="spamCardsGrid" class="cards-grid-4">
+        <!-- Skeleton cards -->
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLUE FEATURE MATRIX SECTION (Sesuai "PRICING DETAILS" 4 kartu vertikal di atas background biru) -->
+  <section id="ringkasan-fitur" class="blue-matrix-section">
+    <div class="container">
+      <h2 class="matrix-title">MODUL &amp; KAPABILITAS SCRAPER</h2>
+      <div class="matrix-grid-4">
+        <div class="matrix-card">
+          <h3>Number Lookup</h3>
+          <p class="matrix-sub">Pencarian &amp; normalisasi nomor</p>
+          <div class="matrix-highlight">E.164</div>
+          <span class="matrix-caption">Otomatisasi Prefix &amp; Slug</span>
+          <ul class="matrix-list">
+            <li>Normalisasi input angka &amp; URL</li>
+            <li>Konversi otomatis kode negara (+62)</li>
+            <li>Dukungan 4 Locale (EN, TR, RU, ID)</li>
+            <li>Deteksi halaman kosong (Soft-200)</li>
+            <li>Search &amp; Detail URL Generator</li>
+          </ul>
+          <button type="button" class="btn-outline-blue" data-jump-tab="lookup">Gunakan Lookup</button>
+        </div>
+
+        <div class="matrix-card featured">
+          <div class="featured-ribbon">Modul Inti</div>
+          <h3>Risk &amp; Statistics</h3>
+          <p class="matrix-sub">Analisis ancaman &amp; laporan</p>
+          <div class="matrix-highlight">0–100%</div>
+          <span class="matrix-caption">Skor Risiko &amp; Metrik Panggilan</span>
+          <ul class="matrix-list">
+            <li>Label risiko &amp; persentase skor</li>
+            <li>Jumlah pencarian (Search Count)</li>
+            <li>Total panggilan (Total Calls)</li>
+            <li>Jumlah laporan (User Reports)</li>
+            <li>Info Operator, Wilayah &amp; Surface</li>
+          </ul>
+          <button type="button" class="btn-solid-blue" data-jump-tab="lookup">Cek Skor Risiko</button>
+        </div>
+
+        <div class="matrix-card">
+          <h3>Public JSON-LD</h3>
+          <p class="matrix-sub">Ekstraksi data terstruktur</p>
+          <div class="matrix-highlight">Schema</div>
+          <span class="matrix-caption">Metadata &amp; Komentar Publik</span>
+          <ul class="matrix-list">
+            <li>Parsing QAPage &amp; Rating Up/Down</li>
+            <li>Ekstraksi komentar &amp; penulis</li>
+            <li>BreadcrumbList &amp; tanggal halaman</li>
+            <li>FAQPage terstruktur per halaman</li>
+            <li>Daftar nomor spam terkait</li>
+          </ul>
+          <button type="button" class="btn-outline-blue" data-jump-tab="lookup">Lihat Metadata</button>
+        </div>
+
+        <div class="matrix-card">
+          <h3>Sitemap System</h3>
+          <p class="matrix-sub">Indeks direktori nomor publik</p>
+          <div class="matrix-highlight">XML</div>
+          <span class="matrix-caption">Filter, Exact Match &amp; Batch</span>
+          <ul class="matrix-list">
+            <li>Ekstraksi Sitemap XML otomatis</li>
+            <li>Deteksi locale per entri nomor</li>
+            <li>Filter potongan digit (Slug)</li>
+            <li>Pencarian persis (Exact Match)</li>
+            <li>Paginasi Offset &amp; Limit</li>
+          </ul>
+          <button type="button" class="btn-outline-blue" data-jump-tab="sitemap-find">Buka Sitemap</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITEMAP DIRECTORY EXPLORER -->
+  <section id="direktori-sitemap" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">DIREKTORI SITEMAP PUBLIK</h2>
+          <p class="section-desc" id="sitemapMetaInfo">Menampilkan daftar nomor publik yang terindeks di sitemap.xml Getcontact.</p>
+        </div>
+        <div class="sitemap-controls">
+          <select id="dirLocaleSelect" aria-label="Locale Direktori">
+            <option value="all" selected>Semua Locale</option>
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+            <option value="tr">TR</option>
+            <option value="ru">RU</option>
+          </select>
+          <input type="text" id="dirSearchInput" placeholder="Filter digit slug..." />
+          <button type="button" class="btn-small-blue" id="btnDirFilter">Filter</button>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-responsive">
+          <table class="sitemap-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nomor (E.164)</th>
+                <th>Slug</th>
+                <th>Locale</th>
+                <th>URL Sumber</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="sitemapTableBody">
+              <tr>
+                <td colspan="6" class="table-empty">Memuat entri sitemap...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination-bar">
+          <span id="paginationInfo">Menampilkan 0–0 dari 0 nomor</span>
+          <div class="pagination-btns">
+            <button type="button" class="btn-page" id="btnPrevPage" disabled>← Sebelumnya</button>
+            <button type="button" class="btn-page" id="btnNextPage" disabled>Berikutnya →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (4-Step Horizontal Flow seperti "HOW TO BOOK") -->
+  <section id="cara-kerja" class="section-block pt-0">
+    <div class="container">
+      <h2 class="section-title text-center mb-lg">CARA KERJA PENGECEKAN</h2>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-icon">1</div>
+          <h3>1. Masukkan Nomor</h3>
+          <p>Ketik nomor lokal (08xx), internasional (+62), atau tempel URL Getcontact.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">→</div>
+        <div class="step-item">
+          <div class="step-icon">2</div>
+          <h3>2. Normalisasi E.164</h3>
+          <p>Sistem membersihkan karakter non-digit dan menyesuaikan prefix kode negara.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">→</div>
+        <div class="step-item">
+          <div class="step-icon">3</div>
+          <h3>3. Analisis Risiko</h3>
+          <p>Scraper mengekstrak skor spam, statistik panggilan, operator, dan JSON-LD.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">→</div>
+        <div class="step-item">
+          <div class="step-icon">4</div>
+          <h3>4. Tinjau Komentar</h3>
+          <p>Baca ulasan komunitas dan nomor spam terkait sebelum membalas panggilan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER BLUE STATS + FAQ QUOTE CARD (Sesuai bagian paling bawah gambar) -->
+  <footer class="footer-banner">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-stats">
+          <div class="f-stat">
+            <div class="f-stat-icon">⚡</div>
+            <div class="f-stat-val" id="statLiveVal">—</div>
+            <div class="f-stat-lbl">Pencari Live</div>
+          </div>
+          <div class="f-stat">
+            <div class="f-stat-icon">🗂️</div>
+            <div class="f-stat-val" id="statSitemapVal">—</div>
+            <div class="f-stat-lbl">Nomor Sitemap</div>
+          </div>
+          <div class="f-stat">
+            <div class="f-stat-icon">🌐</div>
+            <div class="f-stat-val">4</div>
+            <div class="f-stat-lbl">Locale (EN/TR/RU/ID)</div>
+          </div>
+          <div class="f-stat">
+            <div class="f-stat-icon">🛡️</div>
+            <div class="f-stat-val">100%</div>
+            <div class="f-stat-lbl">Read-Only &amp; Aman</div>
+          </div>
+        </div>
+
+        <div class="footer-faq-card">
+          <div class="faq-quote-mark">“</div>
+          <div id="faqDisplayContent">
+            <p class="faq-question">Bagaimana sistem ini bekerja?</p>
+            <p class="faq-answer">Mengambil metadata publik, skor risiko spam, statistik, dan komentar dari halaman lookup publik tanpa memerlukan login atau kredensial akun pribadi.</p>
+          </div>
+          <div class="faq-controls">
+            <span id="faqCounter">FAQ 1 / 1</span>
+            <button type="button" id="btnNextFaq" class="btn-faq-next">Pertanyaan Berikutnya →</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>CEKNOMOR — Public Number Lookup &amp; Spam Analysis</span>
+        <span id="homeStatsExtra"></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
