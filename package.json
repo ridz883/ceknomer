@@ -1,0 +1,13 @@
+{
+  "name": "ceknomor-getcontact-web",
+  "version": "1.0.0",
+  "description": "Web cek nomor telepon & reputasi spam berbasis public lookup scraper",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node lib/getcontact.js"
+  }
+}
